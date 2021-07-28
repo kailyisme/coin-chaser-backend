@@ -162,7 +162,14 @@ function App() {
           </>
         ) : (
           <>
-            <button onClick={() => login(auth)}>Login</button>
+            <button
+              onClick={() => {
+                login(auth);
+                if (!username){setUsername("I don't know my name")}
+              }}
+            >
+              Login
+            </button>
             <input
               type="textbox"
               onChange={(event) => {
